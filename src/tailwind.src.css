@@ -1,3 +1,14 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.badge {
+  @apply bg-orange-400;
+  @apply text-orange-800;
+  @apply text-xs;
+  @apply uppercase;
+  @apply font-bold;
+  @apply rounded-full;
+  @apply p-2;
+  @apply ml-2;
+}

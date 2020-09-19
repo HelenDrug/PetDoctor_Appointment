@@ -50,11 +50,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App text-gray-700">
+      <div className="App text-gray-700 font-mono">
         <div>
           <nav>
             <div>
-              <h1 className="font-bold uppercase p-4 border-b-2 border-gray-200">
+              <h1 className="font-bold uppercase p-4 border-b-2 border-gray-200 text-green-800 sm:text-green-600 lg:text-green-800 md:text-green-700">
                 <a href="#">Pet Doctor</a>
               </h1>
             </div>
@@ -82,17 +82,19 @@ class App extends Component {
             </ul>
           </nav>
         </div>
-        <main className="px-16 py-6">
-          <div>
+        <main className="px-16 py-6 bg-gray-100">
+          <div className="flex justify-center md:justify-end">
             <a href="#">Log In</a>
-            <a href="#">Sign Up</a>
+            <a href="#" className="ml-3">
+              Sign Up
+            </a>
           </div>
           <header>
             <h2 className="text-gray-900 text-5xl font-semibold ">
               Pet Doctor Appointments
             </h2>
           </header>
-          <div className="mt-16">
+          <div className="mt-16 bg-white">
             <ListAppointment
               appointments={this.state.myAppointments}
               deleteAppointment={this.deleteAppointment}
