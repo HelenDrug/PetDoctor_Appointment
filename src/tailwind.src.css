@@ -12,3 +12,14 @@
   @apply p-2;
   @apply ml-2;
 }
+
+.btn {
+  @apply rounded-full;
+  @apply py-2;
+  @apply px-3;
+  @apply uppercase;
+  @apply text-xs;
+  @apply font-bold;
+  @apply cursor-pointer;
+  @apply tracking-wider;
+}
