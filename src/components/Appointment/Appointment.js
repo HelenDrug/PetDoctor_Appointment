@@ -1,31 +1,40 @@
 import React from "react";
-import { FaTimes } from "react-icons/fa";
 import Moment from "react-moment";
 
 export default function Appointment({ item, deleteAppointment }) {
   return (
     <div
       key={item}
-      className="pet-item bg-green-100   hover:bg-gray-200 media py-3 rounded-lg overflow-hidden shadow-md"
+      className="flex bg-green-100   hover:bg-gray-200 media py-3 rounded-lg overflow-hidden shadow-md"
     >
-      <div className="mr-3">
-        <button
-          className="pet-delete btn btn-sm"
-          onClick={() => deleteAppointment(item)}
-        >
-          <FaTimes />
+      <div>
+        <button className="btn" onClick={() => deleteAppointment(item)}>
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
         </button>
       </div>
 
-      <div className="pet-info media-body">
-        <div className="pet-head d-flex">
-          <span className="pet-name font-bold text-green-700">
+      <div className="p-2">
+        <div className="flex">
+          <span className="font-bold text-green-700">
             {item.petName}
           </span>
           <div className="badge">
             <span>Pet</span>
           </div>
-          <span className="apt-date ml-auto mr-4">
+          <span className="ml-auto mr-4">
             <Moment
               date={item.aptDate}
               parse="YYYY-MM-DD hh:mm"
@@ -34,13 +43,13 @@ export default function Appointment({ item, deleteAppointment }) {
           </span>
         </div>
 
-        <div className="owner-name">
-          <span className="label-item font-italic font-semibold text-gray-600">
+        <div className="owner-name mt-2">
+          <span className="font-italic font-semibold text-gray-600">
             Owner:{" "}
           </span>
           <span>{item.ownerName}</span>
         </div>
-        <div className="apt-notes text-sm">{item.aptNotes}</div>
+        <div className="text-sm mt-2">{item.aptNotes}</div>
       </div>
     </div>
   );

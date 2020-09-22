@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import AddAppointment from "./components/addAppointment";
-import ListAppointment from "./components/listAppointment";
+import AppointmentList from "./components/AppointmentList/AppointmentList";
 import NavBar from "./components/NavBar/NavBar";
 import Authentification from "./components/Authentification/Authentification";
 import Header from "./components/Header/Header";
@@ -58,7 +58,7 @@ class App extends Component {
         <main className="px-16 py-6 bg-gray-100 md:col-span-4">
           <Authentification />
           <Header />
-          <ListAppointment
+          <AppointmentList
             appointments={this.state.myAppointments}
             deleteAppointment={this.deleteAppointment}
           />
