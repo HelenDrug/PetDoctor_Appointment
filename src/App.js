@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import AddAppointment from "./components/addAppointment";
+import AddAppointmentForm from "./components/AddAppointmentForm/AddAppointmentForm";
 import AppointmentList from "./components/AppointmentList/AppointmentList";
 import NavBar from "./components/NavBar/NavBar";
 import Authentification from "./components/Authentification/Authentification";
@@ -62,7 +62,7 @@ class App extends Component {
             appointments={this.state.myAppointments}
             deleteAppointment={this.deleteAppointment}
           />
-          <AddAppointment
+          <AddAppointmentForm
             formDisplay={this.state.formDisplay}
             toggleForm={this.toggleForm}
             addAppointment={this.addAppointment}

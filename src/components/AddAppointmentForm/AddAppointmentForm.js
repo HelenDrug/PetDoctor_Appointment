@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 
-const AddAppointment = (props) => {
+const AddAppointmentForm = (props) => {
   const [state, setState] = useState({
     petName: "",
     ownerName: "",
@@ -45,32 +45,32 @@ const AddAppointment = (props) => {
   return (
     <div
       className={
-        "card textcenter mt-3 mb-3 " +
+        "rounded overflow-hidden shadow-md mt-3 mb-3 " +
         (props.formDisplay ? "" : "add-appointment")
       }
     >
       <div
-        className="apt-addheading card-header bg-success text-white font-weight-bold"
+        className="flex gap-4 p-3 bg-green-500 text-white font-bold"
         onClick={props.toggleForm}
       >
         <FaPlus />
         Add Appointment
       </div>
 
-      <div className="card-body">
+      <div className=" p-10">
         <form id="aptForm" noValidate onSubmit={handleAdd}>
-          <div className="form-group form-row">
+          <div className="flex flex-col flex-wrap -mx-3 mb-6 w-full md:w-full px-3">
             <label
-              className="col-md-2 col-form-label text-md-right"
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
               htmlFor="petName"
               readOnly
             >
               Pet Name
             </label>
-            <div className="col-md-10">
+            <div className="flex-grow">
               <input
                 type="text"
-                className="form-control"
+                className="appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500"
                 name="petName"
                 placeholder="Pet's Name"
                 value={state.petName}
@@ -79,17 +79,17 @@ const AddAppointment = (props) => {
             </div>
           </div>
 
-          <div className="form-group form-row">
+          <div className="flex flex-row sm:flex-col w-full px-3 mb-6 -pr-4">
             <label
-              className="col-md-2 col-form-label text-md-right"
+              className="block text-right mt-2 md:mb-0 pr-2"
               htmlFor="ownerName"
             >
               Pet Owner
             </label>
-            <div className="col-md-10">
+            <div className="flex-grow">
               <input
                 type="text"
-                className="form-control"
+                className="bg-white border-gray-400 border-2 rounded w-full py-2 px-4 leading-tight focus:border-green-500"
                 name="ownerName"
                 placeholder="Owner's Name"
                 value={state.ownerName}
@@ -167,4 +167,4 @@ const AddAppointment = (props) => {
   );
 };
 
-export default AddAppointment;
+export default AddAppointmentForm;

@@ -43,7 +43,7 @@ export default function Appointment({ item, deleteAppointment }) {
           </span>
         </div>
 
-        <div className="owner-name mt-2">
+        <div className="mt-2">
           <span className="font-italic font-semibold text-gray-600">
             Owner:{" "}
           </span>
