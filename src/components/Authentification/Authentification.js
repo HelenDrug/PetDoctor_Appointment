@@ -4,7 +4,7 @@ export default function Authentification(){
     return(
         <div className="flex justify-center md:justify-end">
             <a
-              href="#"
+              href="login.html"
               className="btn bg-transparent md:border-2 text-green-700 hover:text-green-900 font-semibold  md:border-green-700 hover:border-green-900"
             >
               <svg
@@ -24,7 +24,7 @@ export default function Authentification(){
               Log In
             </a>
             <a
-              href="#"
+              href="signUp.html"
               className="btn ml-3 md:border-2 bg-transparent text-green-700 hover:text-green-900 font-semibold  md:border-green-700 hover:border-green-900"
             >
               <svg

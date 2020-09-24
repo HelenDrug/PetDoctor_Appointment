@@ -23,3 +23,42 @@
   @apply cursor-pointer;
   @apply tracking-wider;
 }
+.formInput {
+  @apply appearance-none;
+  @apply block;
+  @apply w-full;
+  @apply bg-white;
+  @apply text-gray-700;
+  @apply border;
+  @apply border-gray-400;
+  @apply shadow-inner;
+  @apply rounded-md;
+  @apply py-2;
+  @apply px-4;
+  @apply leading-tight;
+}
+
+.formInput:focus {
+  @apply outline-none;
+  @apply border-gray-700;
+}
+
+.formLabel {
+  @apply block;
+  @apply uppercase;
+  @apply tracking-wide;
+  @apply text-gray-700;
+  @apply text-sm;
+  @apply font-bold;
+  @apply mb-2;
+}
+
+.formFlexContainer {
+  @apply flex;
+  @apply flex-col;
+  @apply flex-wrap;
+  @apply -mx-3;
+  @apply mb-6;
+  @apply w-full;
+  @apply pl-4;
+}

@@ -22,7 +22,6 @@ const AddAppointmentForm = (props) => {
 
   const handleAdd = (event) => {
     event.preventDefault();
-    console.log(state);
     let tempApt = {
       petName: state.petName,
       ownerName: state.ownerName,
@@ -44,10 +43,7 @@ const AddAppointmentForm = (props) => {
 
   return (
     <div
-      className={
-        "rounded overflow-hidden shadow-md mt-3 mb-3 " +
-        (props.formDisplay ? "" : "add-appointment")
-      }
+      className={"rounded shadow-md mt-3 mb-3 " + (props.formDisplay ? "" : "")}
     >
       <div
         className="flex gap-4 p-3 bg-green-500 text-white font-bold"
@@ -57,109 +53,92 @@ const AddAppointmentForm = (props) => {
         Add Appointment
       </div>
 
-      <div className=" p-10">
+      <div className={" p-8 hidden" + (props.formDisplay ? "" : "block")}>
         <form id="aptForm" noValidate onSubmit={handleAdd}>
-          <div className="flex flex-col flex-wrap -mx-3 mb-6 w-full md:w-full px-3">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="petName"
-              readOnly
-            >
+          <div className="formFlexContainer">
+            <label className="formLabel" htmlFor="petName" readOnly>
               Pet Name
             </label>
-            <div className="flex-grow">
-              <input
-                type="text"
-                className="appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500"
-                name="petName"
-                placeholder="Pet's Name"
-                value={state.petName}
-                onChange={handleChange}
-              />
-            </div>
+            <input
+              type="text"
+              className="formInput"
+              name="petName"
+              placeholder="Pet's Name"
+              value={state.petName}
+              onChange={handleChange}
+              required
+            />
           </div>
 
-          <div className="flex flex-row sm:flex-col w-full px-3 mb-6 -pr-4">
-            <label
-              className="block text-right mt-2 md:mb-0 pr-2"
-              htmlFor="ownerName"
-            >
+          <div className="formFlexContainer">
+            <label className="formLabel" htmlFor="ownerName">
               Pet Owner
             </label>
-            <div className="flex-grow">
-              <input
-                type="text"
-                className="bg-white border-gray-400 border-2 rounded w-full py-2 px-4 leading-tight focus:border-green-500"
-                name="ownerName"
-                placeholder="Owner's Name"
-                value={state.ownerName}
-                onChange={handleChange}
-              />
-            </div>
+            <input
+              type="text"
+              className="formInput"
+              name="ownerName"
+              placeholder="Owner's Name"
+              value={state.ownerName}
+              onChange={handleChange}
+              required
+            />
           </div>
 
-          <div className="form-group form-row">
-            <label
-              className="col-md-2 col-form-label text-md-right"
-              htmlFor="aptDate"
-            >
-              Date
-            </label>
-            <div className="col-md-4">
+          <div className="formFlexContainer flex-row items-center justify-between">
+            <div className="w-full md:w-1/2 pr-3">
+              <label className="formLabel" htmlFor="aptDate">
+                Date
+              </label>
               <input
                 type="date"
-                className="form-control"
+                className="formInput"
                 name="aptDate"
                 id="aptDate"
                 value={state.aptDate}
                 onChange={handleChange}
+                required
               />
             </div>
-            <label
-              className="col-md-2 col-form-label text-md-right"
-              htmlFor="aptTime"
-            >
-              Time
-            </label>
-            <div className="col-md-4">
+            <div className="w-full md:w-1/2">
+              <label className="formLabel" htmlFor="aptTime">
+                Time
+              </label>
               <input
                 type="time"
-                className="form-control"
+                className="formInput"
                 name="aptTime"
                 id="aptTime"
                 value={state.aptTime}
                 onChange={handleChange}
+                reguired
               />
             </div>
           </div>
 
-          <div className="form-group form-row">
-            <label className="col-md-2 text-md-right" htmlFor="aptNotes">
+          <div className="formFlexContainer">
+            <label className="formLabel" htmlFor="aptNotes">
               Apt. Notes
             </label>
-            <div className="col-md-10">
-              <textarea
-                className="form-control"
-                rows="4"
-                cols="50"
-                name="aptNotes"
-                id="aptNotes"
-                placeholder="Appointment Notes"
-                value={state.aptNotes}
-                onChange={handleChange}
-              />
-            </div>
+            <textarea
+              className="formInput"
+              rows="4"
+              cols="50"
+              name="aptNotes"
+              id="aptNotes"
+              placeholder="Appointment Notes"
+              value={state.aptNotes}
+              onChange={handleChange}
+            />
           </div>
 
-          <div className="form-group form-row mb-0">
-            <div className="offset-md-2 col-md-10">
-              <button
-                type="submit"
-                className="btn btn-success d-block ml-auto font-weight-bold"
-              >
-                Add Appointment
-              </button>
-            </div>
+          <div className="flex justify-end pr-2">
+            <button
+              type="submit"
+              className="btn bg-green-500 d-block text-bold text-white shadow-md"
+            >
+              Add Appointment
+            </button>
           </div>
         </form>
       </div>

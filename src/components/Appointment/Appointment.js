@@ -27,14 +27,16 @@ export default function Appointment({ item, deleteAppointment }) {
       </div>
 
       <div className="p-2">
-        <div className="flex">
+        <div className="flex justify-between">
+        <div>
           <span className="font-bold text-green-700">
             {item.petName}
           </span>
           <div className="badge">
             <span>Pet</span>
           </div>
-          <span className="ml-auto mr-4">
+          </div>
+          <span className="mr-2">
             <Moment
               date={item.aptDate}
               parse="YYYY-MM-DD hh:mm"

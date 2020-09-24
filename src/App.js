@@ -33,8 +33,8 @@ class App extends Component {
   }
 
   addAppointment(apt) {
+    
     let tempApts = this.state.myAppointments;
-    console.log(apt);
     tempApts.unshift(apt);
     this.setState({
       myAppointments: tempApts,
