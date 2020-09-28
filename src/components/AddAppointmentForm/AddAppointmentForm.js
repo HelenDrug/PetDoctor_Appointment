@@ -43,7 +43,8 @@ const AddAppointmentForm = (props) => {
 
   return (
     <div
-      className={"rounded shadow-md mt-3 mb-3 " + (props.formDisplay ? "" : "")}
+      id="addApt"
+      className={"rounded shadow-md mt-3 mb-3 "}
     >
       <div
         className="flex gap-4 p-3 bg-green-500 text-white font-bold"

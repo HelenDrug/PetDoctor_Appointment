@@ -1,14 +1,17 @@
 import React from "react";
 import Dog from "./dog-with-first-aid-kit-bag.svg";
 
-export default function NavBar() {
+export default function NavBar({ showAboutText }) {
+  const showText = (about) => {
+    return showAboutText(about);
+  };
   return (
     <div className="md:col-span-1 md:flex md:justify-end">
       <nav className="text-right">
         <div className="flex justify-between items-center lg:justify-end border-b-2 border-gray-200">
           <img src={Dog} alt="Dog Logo" />
           <h1 className="font-bold uppercase p-3  text-green-800 sm:text-green-600 lg:text-green-800 md:text-green-700">
-            <a href="home.html">Pet Doctor</a>
+            <a href="#home">Pet Doctor</a>
           </h1>
           <div className="px-4 cursor-pointer md:hidden" id="burger">
             <svg
@@ -30,7 +33,7 @@ export default function NavBar() {
         <ul className="text-xs mt-6 hidden md:block" id="menu">
           <li className="py-2 mx-2">
             <a
-              href="home.html"
+              href="#home"
               className="px-4 flex justify-center btn border-orange-600 shadow-md hover:bg-orange-200 "
             >
               <span className="mt-1">Home</span>
@@ -52,8 +55,9 @@ export default function NavBar() {
           </li>
           <li className="py-2 mx-2">
             <a
-              href="about.html"
+              href="#about"
               className="px-4 flex justify-center btn border-orange-600 shadow-md hover:bg-orange-200"
+              onClick={()=> showText("true")}
             >
               <span className="mt-1">About</span>
               <svg
@@ -74,7 +78,7 @@ export default function NavBar() {
           </li>
           <li className="py-2 mx-2">
             <a
-              href="add.html"
+              href="#addApt"
               className="px-4 flex justify-center btn border-orange-600 shadow-md hover:bg-orange-200 "
             >
               <span className="mt-1">Add appointment</span>
@@ -96,7 +100,7 @@ export default function NavBar() {
           </li>
           <li className="py-2 mx-2">
             <a
-              href="contact.html"
+              href="#contact"
               className="px-3 flex justify-center btn border-orange-600 shadow-md hover:bg-orange-200 "
             >
               <span className="mt-1">Contact</span>
