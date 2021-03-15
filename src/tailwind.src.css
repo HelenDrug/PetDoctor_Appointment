@@ -3,63 +3,24 @@
 @import "tailwindcss/utilities";
 
 .badge {
-  @apply bg-orange-400;
-  @apply text-orange-800;
-  @apply text-xs;
-  @apply uppercase;
-  @apply font-bold;
-  @apply rounded-full;
-  @apply p-2;
-  @apply ml-2;
+  @apply bg-orange-400 text-orange-800 text-xs uppercase font-bold rounded-full p-2 ml-2;
 }
 
 .btn {
-  @apply rounded-full;
-  @apply py-2;
-  @apply px-3;
-  @apply uppercase;
-  @apply text-xs;
-  @apply font-bold;
-  @apply cursor-pointer;
-  @apply tracking-wider;
+  @apply rounded-full py-2 px-3 uppercase text-xs font-bold cursor-pointer tracking-wider;
 }
 .formInput {
-  @apply appearance-none;
-  @apply block;
-  @apply w-full;
-  @apply bg-white;
-  @apply text-gray-700;
-  @apply border;
-  @apply border-gray-400;
-  @apply shadow-inner;
-  @apply rounded-md;
-  @apply py-2;
-  @apply px-4;
-  @apply leading-tight;
+  @apply appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-2 px-4 leading-tight;
 }
 
 .formInput:focus {
-  @apply outline-none;
-  @apply border-gray-700;
+  @apply outline-none border-gray-700;
 }
 
 .formLabel {
-  @apply block;
-  @apply uppercase;
-  @apply tracking-wide;
-  @apply text-gray-700;
-  @apply text-sm;
-  @apply font-bold;
-  @apply mb-2;
+  @apply block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2;
 }
 
 .formFlexContainer {
-  @apply flex;
-  @apply flex-col;
-  @apply flex-wrap;
-  @apply -mx-3;
-  @apply mb-6;
-  @apply w-full;
-  @apply pl-4;
+  @apply flex flex-col flex-wrap -mx-3 mb-6 w-full pl-4;
 }
-
